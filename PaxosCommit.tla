@@ -1,8 +1,5 @@
 ----------------------------- MODULE PaxosCommit ----------------------------
 (***************************************************************************)
-(* This specification is discussed in "Paxos Commit", Lecture 6 of the     *)
-(* TLA+ Video Course.                                                      *)
-(*                                                                         *)
 (* This module specifies the Paxos Commit algorithm.  We specify only      *)
 (* safety properties, not liveness properties.  We simplify the            *)
 (* specification in the following ways.                                    *)
@@ -260,10 +257,6 @@ PCNext ==  \* The next-state action
   \/ PCDecide
   \/ \E acc \in Acceptor : Phase1b(acc) \/ Phase2b(acc) 
 -----------------------------------------------------------------------------
-(***************************************************************************)
-(* The following part of the spec is not covered in Lecture 7.  It will be *)
-(* explained in Lecture 8.                                                 *)
-(***************************************************************************)
 PCSpec == PCInit /\ [][PCNext]_<<rmState, aState, msgs>>
   (*************************************************************************)
   (* The complete spec of the Paxos Commit protocol.                       *)

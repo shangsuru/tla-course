@@ -1,3 +1,4 @@
+------------------------------------ MODULE DieHard ------------------------------- 
 EXTENDS Integers
 
 VARIABLES small, big   

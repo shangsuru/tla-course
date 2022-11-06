@@ -1,3 +1,4 @@
+------------------------------------ MODULE SimpleProgram ------------------------------- 
 EXTENDS Integers
 VARIABLES i, pc   
 

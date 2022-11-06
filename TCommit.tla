@@ -1,7 +1,5 @@
-(***************************************************************************)
-(* This specification is explained in "Transaction Commit", Lecture 5 of   *)
-(* the TLA+ Video Course.                                                  *)
-(***************************************************************************)
+------------------------------------ MODULE TCommit ------------------------------- 
+
 CONSTANT RM       \* The set of participating resource managers
 
 VARIABLE rmState  \* rmState[rm] is the state of resource manager rm.
@@ -55,10 +53,6 @@ TCConsistent ==
   \A r1, r2 \in RM : ~ /\ rmState[r1] = "aborted"
                        /\ rmState[r2] = "committed"
 -----------------------------------------------------------------------------
-(***************************************************************************)
-(* The following part of the spec is not discussed in Video Lecture 5.  It *)
-(* will be explained in Video Lecture 8.                                   *)
-(***************************************************************************)
 TCSpec == TCInit /\ [][TCNext]_rmState
   (*************************************************************************)
   (* The complete specification of the protocol written as a temporal      *)
@@ -73,3 +67,4 @@ THEOREM TCSpec => [](TCTypeOK /\ TCConsistent)
   (* equivalent to invariance of both of the formulas TCTypeOK and         *)
   (* TCConsistent.                                                         *)
   (*************************************************************************)
+====

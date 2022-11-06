@@ -1,3 +1,4 @@
+------------------------------------ MODULE TwoPhase ------------------------------- 
 (***************************************************************************)
 (* This specification is discussed in "Two-Phase Commit", Lecture 6 of the *)
 (* TLA+ Video Course.  It describes the Two-Phase Commit protocol, in      *)
